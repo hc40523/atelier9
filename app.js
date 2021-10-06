@@ -54,6 +54,12 @@ client.on('connect', function () {
     client.publish('MODULE', 'le serveur js vous dit bonjour');
 });
 
+client.on('message', function (topic, message) {
+    console.log(topic.toString());
+    console.log(message.toString());
+});
+
+
 client.subscribe('MODULE/#');
 
 
