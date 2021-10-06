@@ -1,0 +1,35 @@
+<!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="container">
+
+  <header>
+    <%- include('../partials/header') %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <h1 class="text-center p-4">Modules: Vue générale</h1>
+      <ul class="list-group">
+        <li class="list-group-item">Module 1 : <% if (modTab[1]){ %> Actif <% }else{ %> Éteint <% } %></li>
+        <li class="list-group-item">Module 2 : <% if (modTab[2]){ %> Actif <% }else{ %> Éteint <% } %></li>
+        <li class="list-group-item">Module 3 : <% if (modTab[3]){ %> Actif <% }else{ %> Éteint <% } %></li>
+        <li class="list-group-item">Module 4 : <% if (modTab[4]){ %> Actif <% }else{ %> Éteint <% } %></li>
+        <li class="list-group-item">Module 5 : <% if (modTab[5]){ %> Actif <% }else{ %> Éteint <% } %></li>
+        <li class="list-group-item">Module 6 : <% if (modTab[6]){ %> Actif <% }else{ %> Éteint <% } %></li>
+      </ul>
+
+      <p class="p-4 text-center">Pour réinitialiser les modules : <a href="/reset">Reset</a><br>
+        <a href="/"><-- Retourner à la page d'acceuil</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer') %>
+  </footer>
+
+</body>
+</html>

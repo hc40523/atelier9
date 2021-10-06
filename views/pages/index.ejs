@@ -1,0 +1,57 @@
+<!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <%- include('../partials/head') %>
+</head>
+
+<body class="container">
+
+  <header>
+    <%- include('../partials/header') %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <h1 class="text-center">Acceuil</h1>
+      <h3 class="text-center">Choisissez votre module</h3>
+      <p>Bienvenue dans mon laboratoire 3!</p>
+      <ul>
+        <li><a href="/module/1">Module 1</a></li>
+        <li><a href="/module/2">Module 2</a></li>
+        <li><a href="/module/3">Module 3</a></li>
+        <li><a href="/module/4">Module 4</a></li>
+        <li><a href="/module/5">Module 5</a></li>
+        <li><a href="/module/6">Module 6</a></li>
+      </ul>
+      <h3>Ou choisissez parmi ce menue:</h3>
+      <form>
+        <form>
+            <div class="form-group">
+              <label for="selection">Un formulaire (select) :</label>
+              <select name="module" id="selection" class="custom-select">
+                <option value="">Choisissez un module...</option>
+                <optgroup label="Partie - 1">
+                  <option value="1">Module 1</option>
+                  <option value="2">Module 2</option> 2</option>
+                  <option value="3">Module 3</option>
+                </optgroup>
+                <optgroup label="Partie - 2">
+                  <option value="4">Module 4</option>
+                  <option value="5">Module 5</option>
+                  <option value="6">Module 6</option>
+                </optgroup>
+              </select>
+            </div>
+      </form>
+      <p>Pour voir l'état des modules: <a href="/controls">Page de controle.</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer') %>
+  </footer>
+</body>
+
+</html>

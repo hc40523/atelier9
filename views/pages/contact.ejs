@@ -1,0 +1,45 @@
+<!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="container">
+
+  <header>
+    <%- include('../partials/header') %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <h1>Contactes</h1>
+      <table>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>email</th>
+          <th>Téléphone</th>
+        </tr>
+        <tr>
+          <td>Boush</td>
+          <td>George</td>
+          <td>gboush@email.ca</td>
+          <td>450-123-1234</td>
+        </tr>
+        <tr>
+          <td>Alex</td>
+          <td>Andra</td>
+          <td>lex.andra@email.ca</td>
+          <td>514-123-1234</td>
+        </tr>
+      </table>
+      <p><a href="/">Retour à l'acceuil</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer') %>
+  </footer>
+
+</body>
+</html>
