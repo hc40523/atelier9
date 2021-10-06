@@ -51,6 +51,10 @@ app.use(function (req, res) {
 
 client.on('connect', function () {
     console.log("MQTT connecté !");
+    client.publish('MODULE', 'le serveur js vous dit bonjour');
 });
+
+client.subscribe('MODULE/#');
+
 
 app.listen(8080);
