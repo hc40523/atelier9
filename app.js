@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 app.set('view engine', 'ejs');
+var mqtt = require('mqtt');
+var client = mqtt.connect('mqtt://127.0.0.1:1883');
 
 const modMax = 6;
 var mesModules = [
@@ -45,6 +47,10 @@ app.get('/', function (req, res) {
 app.use(function (req, res) {
     res.status(404);
     res.render('pages/notfound');
+});
+
+client.on('connect', function () {
+    console.log("MQTT connecté !");
 });
 
 app.listen(8080);
