@@ -3,7 +3,6 @@ var app = express();
 app.set('view engine', 'ejs');
 var mqtt = require('mqtt');
 var client = mqtt.connect('mqtt://127.0.0.1:1883');
-
 const modMax = 6;
 var mesModules = [
     false,
@@ -55,10 +54,22 @@ client.on('connect', function () {
 });
 
 client.on('message', function (topic, message) {
-    console.log(topic.toString());
-    console.log(message.toString());
-});
+    if (topic.indexOf("MODULE") >= 0 || topic.indexOf("module") >= 0) {
+        /*
+        console.log("topic: " + topic);
+        console.log("message :" + message);
+        */
+        let newtopic = topic.replace(/\D/g, '');
 
+        if (message == "on")
+            mesModules[newtopic] = true;
+        else if (message == "off")
+            mesModules[newtopic] = false;
+        else
+            console.log("Error: bad module state query");
+    }
+
+});
 
 client.subscribe('MODULE/#');
 
